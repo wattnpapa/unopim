@@ -9,7 +9,7 @@ name: Pest Tests
 # limited to the release lines and everything else arrives through the PR event.
 on:
   push:
-    branches: [master, '3.x']
+    branches: [master, '3.x', 'ci/pr832-pgsql-es']
   pull_request:
   merge_group:
 
@@ -108,7 +108,7 @@ jobs:
           if-no-files-found: ignore
 
   pest-elasticsearch:
-    if: github.repository == 'unopim/unopim' && github.event_name != 'pull_request'
+    if: true
     runs-on: ubuntu-24.04
     name: Pest Tests (MySQL + Elasticsearch)
 
